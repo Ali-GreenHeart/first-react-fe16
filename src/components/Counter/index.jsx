@@ -1,16 +1,19 @@
 import { useState } from "react"
+// import "./style.css"
+import "./style.css"
 
 const Counter = () => {
     const [count, setCount] = useState(0)
     return (
         <>
-            <h1>{count}</h1>
+            <h1 className={"counter"}>{count}</h1>
             <button
                 onClick={() => {
                     setCount(count + 1)
                 }}
             >increase</button>
             <button
+                // className={styles.alibaba}
                 onClick={() => {
                     setCount(count - 1)
                 }}

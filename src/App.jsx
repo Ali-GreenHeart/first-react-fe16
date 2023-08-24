@@ -4,6 +4,7 @@ import Counter from "./components/Counter";
 import Calculator from "./components/Calculator";
 import Profile from "./components/Profile";
 import Login from "./components/Login";
+
 // shift+alt+o -> remove unused imports
 // dfgfnhg
 function App() {
@@ -14,7 +15,9 @@ function App() {
             {/* <Counter /> */}
             {/* <Calculator /> */}
             {/* <Profile ad="ali" soyad="neman" yas={9} seher="xacmaz" /> */}
-            <Login />
+            {/* <Login /> */}
+            {/* <Counter />
+            <h1 className="counter">sagol</h1> */}
         </>
     )
 }
