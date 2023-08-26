@@ -1,33 +1,19 @@
+import axios from "axios"
 import { useEffect, useState } from "react"
-import { v4 } from "uuid"
+
+const backend_url = 'https://jsonplaceholder.typicode.com/users'
 
 const Istifadeciler = () => {
     const [users, setUsers] = useState([])
 
-    // useEffect(() => { }, []) // dependency list
-
-    // [] -> mounting
-    // [users] -> users deyisende bu isi gor.
-
     useEffect(() => {
-        return () => {
-            console.log('RIP ☠')
-        }
-    }, [])
-
-    useEffect(() => {
-        console.log('users deyisdi')
-    }, [users])
-
-    useEffect(() => {
-        console.log('men geldim...')
-        setUsers([
-            {
-                id: v4(),
-                ad: 'ali',
-                yas: 12
-            }
-        ])
+        axios.get(backend_url)
+            .then(({ data }) => {
+                setUsers(data)
+            })
+            .catch((err) => {
+                console.log('err oldu!')
+            })
     }, [])
 
     return (
@@ -37,7 +23,10 @@ const Istifadeciler = () => {
             {
                 users.map((user) => {
                     return <div key={user.id}>
-                        <h1>{user.ad} {user.yas}</h1>
+                        <h1>{user.name}</h1>
+                        <h1>{user.username}</h1>
+                        <h1>{user.company.name}</h1>
+                        <hr />
                     </div>
                 })
             }
