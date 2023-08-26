@@ -1,25 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./components/Header";
 import Counter from "./components/Counter";
 import Calculator from "./components/Calculator";
 import Profile from "./components/Profile";
 import Login from "./components/Login";
 import Users from "./components/Users";
+import Istifadeciler from "./components/Istifadeciler";
 
 // shift+alt+o -> remove unused imports
 // dfgfnhg
 function App() {
+    const [show, setShow] = useState(false)
     return (
         <>
-            {/* <Ali /> */}
-            {/* <Header /> */}
-            {/* <Counter /> */}
-            {/* <Calculator /> */}
-            {/* <Profile ad="ali" soyad="neman" yas={9} seher="xacmaz" /> */}
-            {/* <Login /> */}
-            {/* <Counter />
-            <h1 className="counter">sagol</h1> */}
-            <Users />
+            <button
+                onClick={() => {
+                    setShow(!show)
+                }}
+            >{show ? "gizlet" : "goster"}</button>
+            {
+                show && <Istifadeciler />
+            }
         </>
     )
 }
